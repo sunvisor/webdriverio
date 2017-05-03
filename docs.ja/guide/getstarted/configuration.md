@@ -18,8 +18,6 @@ options オブジェクトを渡して Webdriver インスタンスを定義す�
 
 ### desiredCapabilities
 
-that helps you to create this object by clicking together your desired capabilities.
-
 Selenium セッションで実行したい機能を定義します。使える機能のリストについては、[Selenium のマニュアル](https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities)を参照してください。また、目的の機能を一緒にクリックしてこのオブジェクトを作成するのに役立つSauce Labsの[自動テストコンフィグレータ](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/)も便利です。
 
 さらなるサービス固有のオプションについては、 [クラウドサービスのドキュメント](/guide/usage/cloudservices.html)を参照してください。
@@ -194,7 +192,6 @@ node のデバッグを有効にする
 タイプ: `Array of String`<br>
 デフォルト: *null*
 
-## Setup [Babel](https://babeljs.io/) to write tests using next generation JavaScript
 ## 次世代のJavaScriptを使ってテストを書くために [Babel](https://babeljs.io/) をセットアップする
 
 **注：これらの手順はBabel 6用です。Babel 5を使用することはお勧めしません。**
