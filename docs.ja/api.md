@@ -3,13 +3,13 @@ name: api
 title: WebdriverIO - API Docs
 ---
 
-# WebdriverIO API Docs
+# WebdriverIO API ドキュメント
 
-Welcome to the WebdriverIO docs page. These pages contain reference materials for all implemented selenium bindings and commands. WebdriverIO has all [JSONWire protocol](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol) commands implemented and also supports special bindings for [Appium](http://appium.io).
+WebdriverIO のドキュメントページへようこそ。これらのページには、実装されているすべての selenium のバインディングとコマンドのリファレンス資料が含まれています。 WebdriverIO はすべての [JSONWire protocol](https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol) プロトコルコマンドを実装しており、[Appium](http://appium.io) の特別なバインディングもサポートしています。
 
 ## Examples
 
-Each command documentation usually comes with an example that demonstrates the usage of it using WebdriverIO's testrunner running its commands synchronously. If you run WebdriverIO in standalone mode you still can use all commands but need to make sure that the execution order is handled properly by chaining the commands and resolving the promise chain. So instead of assigning the value directly to a variable, as the wdio testrunner allows it:
+各コマンドのドキュメントには、通常、コマンドを同期して実行する WebdriverIO のテストランナーを使用したサンプルの使用例が示されています。WebdriverIO をスタンドアロンモードで実行する場合でも、すべてのコマンドを使用できますが、コマンドを連鎖させて Promise チェーンを解決して、実行順序が適切に処理されるようにする必要があります。したがって、変数に直接値を代入しないで、wdio testrunner を使うこともできます。
 
 ```js
 it('can handle commands synchronously', function () {
@@ -18,7 +18,7 @@ it('can handle commands synchronously', function () {
 });
 ```
 
-you need return the command promise so it gets resolved properly as well as access the value when the promise got resolve:
+promise が解決したときに値にアクセスするだけでなく、適切に解決されるように promise を返す必要があります。
 
 ```js
 it('handles commands as promises', function () {
@@ -28,7 +28,7 @@ it('handles commands as promises', function () {
 });
 ```
 
-Of course you can use Node.JS latest [async/await](https://github.com/yortus/asyncawait) functionality to bring synchronous syntax into your testflow like:
+もちろん、Node.JSの最新の[async/await](https://github.com/yortus/asyncawait)機能を使用して、次のようにテストフローに同期構文を持たせることができます。
 
 ```js
 it('can handle commands using async/await', async function () {
@@ -37,11 +37,15 @@ it('can handle commands using async/await', async function () {
 });
 ```
 
-However it is recommended to use the testrunner to scale up your test suite as it comes with a lot of useful add ons like the [Sauce Service](http://webdriver.io/guide/services/sauce.html) that helps you to avoid writing a lot of boilerplate code by yourself.
+しかし、テストランナーを使ってテストスイートをスケールアップすることをお勧めします。[Sauce Service](http://webdriver.io/guide/services/sauce.html) のような有用なアドオンが多数付属しているため、多くの定型コードを自分で書かずにすみます。
 
-## Element as first citizen
+## エレメントは第一級オブジェクト
 
-To make the code more readable and easier to write we handle element calls as first citizen objects. This means that if you call the [`element`](/api/protocol/element.html) to query an element, WebdriverIO propagates its prototype to the result so you can chain another command to it. This is useful when writing tests with the [Page Object Pattern](http://martinfowler.com/bliki/PageObject.html) where you want to store your page elements in a page object to access them in the test. Simplified this can look like:
+コードをより読みやすく、書くのを容易にするために、エレメント呼び出しを最初の第一級オブジェクトとして扱います。つまり、エレメントをクエリするために [`element`](/api/protocol/element.html) を呼び出すと、WebdriverIOはそのプロトタイプを結果に伝搬し、別のコマンドをチェーンすることができます。
+[ページ オブジェクト パターン](http://martinfowler.com/bliki/PageObject.html)を使って、テストからアクセスできるように、ページ オブジェクトにページ エレメントを格納するようなテストを記述するときに便利です。
+
+簡略化すると次のようになります。
+
 
 ```js
 it('should use elements as first citizen', function () {
@@ -53,7 +57,7 @@ it('should use elements as first citizen', function () {
 });
 ```
 
-Each command that takes a selector as first argument can be executed without passing along the selector again and again. This not only looks nice, it also avoids querying the same element over and over again. The same works in standalone mode:
+する各コマンドはセレクタを第1引数とし、セレクタを何度も何度も通過することなく実行できます。 これは見た目がよいだけでなく、同じ要素を何度も繰り返し照会することも避けています。スタンドアロンモードでも同じことができます：
 
 ```js
 it('should use elements as first citizen in standalone mode', function () {
