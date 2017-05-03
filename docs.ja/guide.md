@@ -3,31 +3,34 @@ name: guide
 title: WebdriverIO - Developer Guide
 ---
 
-# Developer Guide
+# 開発者ガイド
 
-Welcome to the WebdriverIO documentation. It will help you to get started fast. If you run into problems you can find help and answers on our [Gitter Channel](https://gitter.im/webdriverio/webdriverio) or you can hit me on [Twitter](https://twitter.com/webdriverio). Also, if you encounter problems in starting up the server or running the tests after following this tutorial, ensure that the server and the geckodriver are listed in your project directory. If not, re-download them per steps 2 and 3 below.
+WebdriverIO のドキュメントへようこそ。素早くスタートを切る手助けをしましょう。 問題に遭遇した場合は、[Gitter Channel](https://gitter.im/webdriverio/webdriverio) でヘルプや回答を見つけることができます。あるいは [Twitter](https://twitter.com/webdriverio) で見つけて下さい。また、このチュートリアルの後にサーバーの起動やテストの実行で問題が発生する場合は、プロジェクトディレクトリにサーバーとgeckodriverがあることを確認してください。そうでない場合は、以下の手順2および3で再ダウンロードしてください。
 
-The following will give you a short step by step introduction to get your first WebdriverIO script up and running.
+以下は、WebdriverIO スクリプトを起動して実行するための導入ガイドです。
 
-## Taking the first step
+## 最初のステップ
 
-Let's suppose you have [Node.js](http://nodejs.org/) and Java already installed. First thing we need to do is to start a selenium server that executes all selenium commands within the browser. To do so we create an example folder first:
+[Node.js](http://nodejs.org/) とJavaがすでにインストールされているとしましょう。まず、ブラウザ内で selenium コマンドを実行する selenium サーバを起動する必要があります。これを行うには、まずサンプルフォルダを作成します。
 
-** 1. Create a simple test folder**
+**1. シンプルなテストフォルダーを作成する**
+
 ```sh
 $ mkdir webdriverio-test && cd webdriverio-test
 ```
 
-*While still in this test folder:*
+*このフォルダにいる状態で*
 
-Then let's download the latest [selenium standalone server](http://docs.seleniumhq.org/download/) version:
+次に、[selenium standalone server](http://docs.seleniumhq.org/download/) 
+の最新バージョンをダウロードしましょう。
 
-** 2. Download latest selenium standalone server**
+**2. selenium の最新バージョンをダウンロードする**
+
 ```sh
 $ curl -O http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
 ```
 
-** 3. Download the latest version geckodriver for your environment and unpack it in your project directory**
+**3. 環境にあった geckdriver の最新版をダウンロードし、プロジェクト ディレクトリに解凍する**
 
 Linux 64 bit
 
@@ -41,25 +44,29 @@ OSX
 $ curl -L https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-macos.tar.gz | tar xz
 ```
 
-Note: Other geckodriver releases are available [here](https://github.com/mozilla/geckodriver/releases).
+注: 他の geckodriver のリリースは、[ここ](https://github.com/mozilla/geckodriver/releases)から入手できます。
 
 Start the server by executing the following:
+次のコマンドを次項してコマンドを実行してサーバーを起動します。
 
-** 4. Start selenium standalone server**
+**4. selenium standalone server を起動する**
+
 ```sh
 $ java -jar -Dwebdriver.gecko.driver=./geckodriver selenium-server-standalone-3.0.1.jar
 ```
 
-Note that this command sets webdriver path variable so that Selenium uses the geckdriver binary that was added to the project directory and also starts Selenium standalone server.
+このコマンドは webdriver パス変数を設定して、Selenium がプロジェクトディレクトリに追加した geckdriver バイナリを使用し、Seleniumスタンドアロンサーバを起動します。
 
-Keep this running in the background and open a new terminal window. Next step is to download WebdriverIO via NPM:
+これをバックグラウンドで実行し、新しいターミナルウィンドウを開きます。次のステップでは、WebdriverIOをNPM経由でダウンロードします。
 
-** 5. Download WebdriverIO**
+**5. WebdriverIO をダウンロードする**
+
 ```sh
 $ npm install webdriverio
 ```
 
-** 6. Create a test file (test.js) with the following content**
+**6.次の内容のテストファイル（test.js）を作成します。**
+
 ```js
 var webdriverio = require('webdriverio');
 var options = {
@@ -78,30 +85,30 @@ webdriverio
     .end();
 ```
 
-** 7. Run your test file**
+**7. テストファイルを実行する**
 ```sh
 $ node test.js
 ```
 
-this should output the following:
+次のように出力されます。
 
 ```sh
 Title was: Google
 ```
 
-Yay, Congratulations! You've just run your first automation script with WebdriverIO. Let's step it up a notch and create a real test.
+おめでとう！WebdriverIO で最初の自動化スクリプトを実行しました。ノッチを上げて、実際のテストを作成しましょう。
 
-## Let's get serious
+## 大事なことをしましょう
 
-*(If you haven't already, navigate back to the project root directory)*
+（まだ実行していない場合は、プロジェクトのルートディレクトリに戻ります）
 
-This was just a warm up. Let's move forward and run WebdriverIO with the test runner. If you want to use WebdriverIO in your project for integration testing we recommend to use the test runner because it comes with a lot of useful features that makes your life easier. The first step is to create a config file. To do that just run the configuration utility:
+ここまではウォームアップでした。さらにテストランナーと一緒に WebdriverIO を実行しましょう。プロジェクトにおいて WebdriverIO で統合テストをする場合は、テストランナーを使用することをお勧めします。テストランナーには人生を楽にする多くの便利な機能があるからです。 最初のステップは、設定ファイルを作成することです。 これを行うには、設定ユーティリティを実行するだけです。
 
 ```sh
 $ ./node_modules/.bin/wdio config
 ```
 
-A question interface pops up. It will help to create the config easy and fast. If you are not sure what to answer follow this answers:
+質問インターフェイスがポップアップします。 設定を簡単かつ迅速に作成することができます。何と答えていいか分からない時は、次のように答えましょう。
 
 __Q: Where do you want to execute your tests?__<br>
 A: _On my local machine_<br>
@@ -133,13 +140,13 @@ A: _./errorShots/_ (just press enter)<br>
 __Q: What is the base url?__<br>
 A: _http://localhost_ (just press enter)<br>
 
-That's it! The configurator now installs all required packages for you and creates a config file with the name `wdio.conf.js`. Next step is to create your first spec file (test file). For that create a test folder like this:
+それでおしまいです！ コンフィギュレータは必要なパッケージをすべてインストールし、wdio.conf.js という名前の設定ファイルを作成します。次のステップは、最初のスペックファイル（テストファイル）を作成することです。そのために、次のようなテストフォルダを作成します。
 
 ```sh
 $ mkdir -p ./test/specs
 ```
 
-Now let's create a simple spec file in that new folder:
+次に、その新しいフォルダに単純なspecファイルを作成しましょう。
 
 ```js
 var assert = require('assert');
@@ -152,11 +159,10 @@ describe('webdriver.io page', function() {
     });
 });
 ```
-
-The last step is to execute the test runner. To do so just run:
+最後のステップは、テストランナーを実行することです。 次のように実行します。
 
 ```sh
 $ ./node_modules/.bin/wdio wdio.conf.js
 ```
 
-Hurray! The test should pass and you can start writing integration tests with WebdriverIO. If you are interested in more in depth video on-boarding tutorials, feel free to check out our very own course called [learn.webdriver.io](http://learn.webdriver.io/). Also our community has collected a lot of [boilerplate projects](/guide/getstarted/boilerplate.html) that can help you to get started.
+バンザイ！テストは合格し、WebdriverIO で統合テストを作成することができます。 興味があれば、より詳しいビデオオンボードのチュートリアル [learn.webdriver.io](http://learn.webdriver.io/) という独自のコースをチェックしてみてください。また、私たちのコミュニティには、たくさんの[ボイラープレート プロジェクト](/guide/getstarted/boilerplate.html)が集まっています。
