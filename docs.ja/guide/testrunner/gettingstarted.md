@@ -10,7 +10,6 @@ title: WebdriverIO - Test Runner
 
 WebdriverIOには、独自のテストランナーが付属しており、できるだけ早く統合テストを開始することができます。テストフレームワークを使って WebdriverIO を接続することはすべて過去のものです。WebdriverIO ランナーはあなたのためにすべての作業を行い、可能な限り効率的にテストを実行するのに役立ちます。
 
-To see the command line interface help just type the following command in your terminal:
 コマンドラインインタフェースのヘルプを表示するには、ターミナルで次のコマンドを入力してください。
 
 ```txt
