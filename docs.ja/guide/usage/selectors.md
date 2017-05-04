@@ -43,7 +43,6 @@ console.log(browser.getText('*=driver')); // outputs: "WebdriverIO"
 
 ## 特定のテキストを持つエレメント
 
-The same technique can be applied to elements as well, e.g. query a level 1 heading with the text "Welcome to my Page":
 同じテクニックをエレメントにも適用することができます。たとえば、「Welcome to my Page」というテキストの H1 タグをクエリします。
 
 ```html
@@ -114,8 +113,6 @@ Appium の iOS UI Automation 内で述語検索を使用して、エレメント
 
 ### Accessibility ID
 
-The `accessibility id` locator strategy is designed to read a unique identifier for a UI element. This has the benefit of not changing during localization or any other process that might change text. In addition, it can be an aid in creating cross-platform tests, if elements that are functionally the same have the same accessibility id.
-
 `accessibility id` ロケータ ストラテジーは、UIエレメントの一意の識別子を読み取るように設計されています。これは、ローカリゼーションやテキストを変更する可能性のあるその他のプロセスでは変更されないという利点があります。さらに、機能的に同じエレメントが同じアクセシビリティIDを持つ場合、クロスプラットフォームテストの作成を支援することができます。
 
 - iOSの場合、これはAppleが[ここ](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIAccessibilityIdentification_Protocol/index.html)に示したaccessibility identifier です 。
@@ -145,10 +142,6 @@ browser.click(`android.widget.DatePicker`);
 ```
 
 ## チェーン セレクタ
-
-If you want to be more specific in your query, you can chain your selector until you've found the right
-element. If you call element before your actual command, WebdriverIO starts query from that element. For example
-if you have a DOM structure like:
 
 より具体的にクエリするには、適切なエレメントが見つかるまでセレクタをチェーンすることができます。実際のコマンドの前にエレメントを呼び出すと、WebdriverIO はそのエレメントからクエリを開始します。たとえば、次のようなDOM構造があるとします。
 
