@@ -47,6 +47,7 @@ before(async function () {
 
     if (SC_REQUIRED_BUILDS.indexOf(BUILD_ENV) > -1 && process.env.TRAVIS_JOB_NUMBER) {
         console.log('==> Trying to start Sauce Connect')
+
         this.scProcess = await new Promise((resolve, reject) => {
             SauceConnectLauncher({
                 user: process.env.SAUCE_USERNAME,

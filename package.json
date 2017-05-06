@@ -1,7 +1,7 @@
 {
   "name": "webdriverio",
-  "description": "A nodejs bindings implementation for selenium 2.0/webdriver",
-  "version": "4.7.1",
+  "description": "A Node.js bindings implementation for the W3C WebDriver protocol",
+  "version": "4.8.0",
   "homepage": "http://webdriver.io",
   "author": "Camilo Tapia <camilo.tapia@gmail.com>",
   "repository": {
@@ -49,6 +49,7 @@
     "test:desktop": "mocha test/setup.js test/spec/*.js test/spec/desktop/*.js",
     "test:functional": "mocha test/setup.js test/spec/functional/**/*.js",
     "test:ios": "mocha test/setup.js test/spec/mobile/*.js test/spec/mobile/ios/*.js",
+    "test:mobile": "run-s test:ios test:android",
     "test:multibrowser": "mocha test/setup.js test/spec/multibrowser/**/*.js",
     "test:snyk": "snyk auth $SNYK_AUTH_TOKEN && snyk test",
     "test:unit": "mocha test/setup-unit.js test/spec/unit/*.js",
