@@ -30,7 +30,7 @@ Spec レポーター
 npm install wdio-spec-reporter --save-dev
 ```
 
-WebdriverIOのインストール方法については[こちら](http://webdriver.io/guide/getstarted/install.html)をご覧ください 。
+`WebdriverIO` のインストール方法については[こちら](http://webdriver.io/guide/getstarted/install.html)をご覧ください 。
 
 ## 設定
 
