@@ -24,7 +24,7 @@ Sauce サービス
 $ npm install wdio-sauce-service --save-dev
 ```
 
-## Configuration
+## 設定
 
 サービスを使用するには、wdio.conf.js ファイルで `user` と `key` を設定する必要があります。自動的に Sauce Labs を使用して統合テストを実行します。Sauce Connect を使用する場合は、`sauceConnect：true` を設定するだけです。
 
@@ -40,7 +40,7 @@ export.config = {
 };
 ```
 
-## Options
+## オプション
 
 ### user
 Sauce Labs のあなたのユーザー名。
