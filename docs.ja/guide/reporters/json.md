@@ -14,7 +14,7 @@ WDIO JSON Reporter
 
 ## インストール
 
-最も簡単な方法は、 `wdio-json-reporter` をパッケージの devDependency に記述することです。
+最も簡単な方法は、 `wdio-json-reporter` をパッケージの `devDependency` に記述することです。
 
 ```json
 {

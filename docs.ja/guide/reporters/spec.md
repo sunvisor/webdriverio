@@ -5,7 +5,7 @@ index: 1
 title: WebdriverIO - Spec Reporter
 ---
 
-Spec Reporter
+Spec レポーター
 ============
 
 > スペック スタイルでレポートする WebdriverIO プラグイン
@@ -14,7 +14,7 @@ Spec Reporter
 
 ## インストール
 
-最も簡単な方法は、 `wdio-spec-reporter` を `package.json` の `devDependency` として保持することです。
+最も簡単な方法は、 `wdio-json-reporter` を `package.json` の `devDependency` に記述することです。
 
 ```json
 {
