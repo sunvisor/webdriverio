@@ -21,4 +21,4 @@ module.exports = {
 
 dot レポーターは、各テスト スペックごとにドットを印刷します。マシンで色が有効になっている場合は、ドットに3種類の色が表示されます。黄色い点は、少なくとも1つのブラウザがそのスペックを実行したことを意味します。緑色の点は、すべてのブラウザがそのスペックをパスし、赤色の点が少なくとも1つのブラウザがそのスペックを満たしていないことを意味します。
 
-![Dot Reporter](/images/dot.png "Dot Reporter")
+![Dot Reporter](http://webdriver.io/images/dot.png "Dot Reporter")

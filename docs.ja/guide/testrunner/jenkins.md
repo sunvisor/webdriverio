@@ -28,21 +28,21 @@ module.exports = {
 
 フレームワークはお好きなものを選択してください。レポーターも同様です。このチュートリアルでは、Jasmine を使用します。 [いくつかのテスト](https://github.com/christian-bromann/wdio-demo/tree/master/test/specs)を書いたら、新しい Jenkins ジョブをセットアップすることができます。名前と説明を付けてください。
 
-![Name And Description](/images/jenkins-jobname.png "Name And Description")
+![Name And Description](http://webdriver.io/images/jenkins-jobname.png "Name And Description")
 
 次に、常にリポジトリの最新バージョンを取得するようにします。
 
-![Jenkins Git Setup](/images/jenkins-gitsetup.png "Jenkins Git Setup")
+![Jenkins Git Setup](http://webdriver.io/images/jenkins-gitsetup.png "Jenkins Git Setup")
 
 ここで重要なのは、シェルコマンドを実行するビルド ステップを作成することです。ビルド ステップでは、プロジェクトをビルドする必要があります。このデモプロジェクトは外部アプリケーションのみをテストするのでビルドする必要はありませんが、ノードの依存関係をインストールして、`node_modules/.bin/wdio test/wdio.conf.js` のエリアスである `test` コマンドを実行します。
 
-![Build Step](/images/jenkins-runjob.png "Build Step")
+![Build Step](http://webdriver.io/images/jenkins-runjob.png "Build Step")
 
 テストの後、Jenkins が xunit レポートをトラックするようにします。これを行うには、_"Publish JUnit test result report"_ というビルド後のアクションを追加する必要があります。また、外部の xunit プラグインをインストールしてレポートを追跡することもできます。JUnit には基本的な Jenkinsi のインストールが付属しているのでこれだけでOKです。
 
 設定ファイルによると、xunit レポートは私たちのワークスペースのルートディレクトリに保存されます。これらのレポートはXMLファイルです。レポートを追跡するために必要なことは、Jenkins をルートディレクトリのすべてのxmlファイルにポイントさせることです。
 
-![Post-build Action](/images/jenkins-postjob.png "Post-build Action")
+![Post-build Action](http://webdriver.io/images/jenkins-postjob.png "Post-build Action")
 
 That's it! This is all you need to setup Jenkins to run your WebdriverIO jobs. The only thing that didn't got mentioned is that Jenkins is setup in a way that it runs Node.js v0.12 and has the [Sauce Labs](https://saucelabs.com/) environment variables set in the settings.
 
@@ -51,4 +51,4 @@ That's it! This is all you need to setup Jenkins to run your WebdriverIO jobs. T
 
 これで、履歴グラフ、失敗したジョブのスタックトレース情報、各テストで使用されたペイロードを持つコマンドのリストを含む詳細なテスト結果が提供されるようになります。
 
-![Jenkins Final Integration](/images/jenkins-final.png "Jenkins Final Integration")
+![Jenkins Final Integration](http://webdriver.io/images/jenkins-final.png "Jenkins Final Integration")

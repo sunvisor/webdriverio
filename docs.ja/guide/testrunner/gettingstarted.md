@@ -55,7 +55,7 @@ $ ./node_modules/.bin/wdio config
 
 
 <div class="cliwindow" style="width: 92%">
-![WDIO configuration utility](/images/config-utility.gif "WDIO configuration utility")
+![WDIO configuration utility](http://webdriver.io/images/config-utility.gif "WDIO configuration utility")
 </div>
 
 設定ファイルを設定したら、次のようにして統合テストを開始することができます。
