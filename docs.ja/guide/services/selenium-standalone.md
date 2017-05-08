@@ -28,7 +28,7 @@ Seleniumサーバーの処理は、実際の WebdriverIO プロジェクトの�
 npm install wdio-selenium-standalone-service --save-dev
 ```
 
-WebdriverIOのインストール方法については[こちら](http://webdriver.io/guide/getstarted/install.html)をご覧ください。
+`WebdriverIO` のインストール方法については[こちら](http://webdriver.io/guide/getstarted/install.html)をご覧ください。
 
 ## 設定
 
